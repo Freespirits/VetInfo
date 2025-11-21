@@ -18,7 +18,7 @@
         <div class="status" id="status">Checking backend…</div>
       </div>
       <div class="hero__panel">
-        <form id="search-form" class="search-form">
+        <form id="search-form" class="search-form" data-tab-only="guidance">
           <label>
             Species
             <select name="species" id="species">
@@ -45,16 +45,76 @@
           <button type="submit">Find guidance</button>
           <p class="helper">If an upstream API is configured, live results will replace sample data automatically.</p>
         </form>
+
+        <div class="tab-hint">
+          <p class="helper">Use the tabs below to switch between guidance, API setup, and a quick data catalog.</p>
+          <div class="pill secondary" id="status-pill">Loading status…</div>
+        </div>
       </div>
     </header>
 
     <main>
-      <section>
-        <div class="section-header">
-          <h2>Guidance results</h2>
-          <div class="pill" id="result-source">Loading…</div>
+      <section class="tabs">
+        <div class="tab-list" role="tablist" aria-label="VetInfo sections">
+          <button class="tab active" role="tab" aria-selected="true" aria-controls="tab-guidance" data-tab-target="guidance">
+            Guidance
+          </button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-api" data-tab-target="api">
+            API setup
+          </button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="tab-catalog" data-tab-target="catalog">
+            Data catalog
+          </button>
         </div>
-        <div id="results" class="card-grid"></div>
+
+        <div id="tab-guidance" class="tab-panel active" role="tabpanel">
+          <div class="section-header">
+            <h2>Guidance results</h2>
+            <div class="pill" id="result-source">Loading…</div>
+          </div>
+          <div id="results" class="card-grid"></div>
+        </div>
+
+        <div id="tab-api" class="tab-panel" role="tabpanel" aria-hidden="true">
+          <div class="section-header">
+            <h2>API connection helper</h2>
+            <div class="pill" id="api-mode">Detecting…</div>
+          </div>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Health check</h3>
+              <p id="health-message" class="helper">Waiting for backend response…</p>
+              <ul class="key-values">
+                <li><span>Endpoint</span><span><code>/api/health</code></span></li>
+                <li><span>Upstream configured</span><span id="health-upstream">—</span></li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Configuration</h3>
+              <p class="helper">Set environment variables on the server and restart.</p>
+              <ul class="key-values">
+                <li><span><code>GUIDELINES_API_BASE</code></span><span>External API URL</span></li>
+                <li><span><code>GUIDELINES_API_KEY</code></span><span>Optional bearer token</span></li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3>Tips</h3>
+              <ul class="helper">
+                <li>Timeouts are capped at 6 seconds to keep the UI responsive.</li>
+                <li>When upstream is unavailable, results fall back to the bundled sample data.</li>
+                <li>You can test filters locally before wiring up live endpoints.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-catalog" class="tab-panel" role="tabpanel" aria-hidden="true">
+          <div class="section-header">
+            <h2>Sample data catalog</h2>
+            <div class="pill" id="catalog-source">Loading…</div>
+          </div>
+          <div class="catalog" id="catalog"></div>
+        </div>
       </section>
     </main>
 
