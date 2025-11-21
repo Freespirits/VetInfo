@@ -146,6 +146,8 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
   if (!GUIDELINES_API_BASE) {
-    console.log('No GUIDELINES_API_BASE configured. Serving sample data only.');
+    console.log(
+      'No GUIDELINES_API_BASE configured. Serving sample data only. Export GUIDELINES_API_BASE (and optional GUIDELINES_API_KEY) to enable live data.'
+    );
   }
 });
