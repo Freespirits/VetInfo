@@ -3,6 +3,12 @@ const path = require('path');
 const fs = require('fs');
 const { URL } = require('url');
 
+const [nodeMajor] = process.versions.node.split('.').map(Number);
+if (!Number.isInteger(nodeMajor) || nodeMajor < 18) {
+  console.error(`Node.js 18+ is required. Detected version: ${process.versions.node}`);
+  process.exit(1);
+}
+
 const PORT = process.env.PORT || 3000;
 const GUIDELINES_API_BASE = process.env.GUIDELINES_API_BASE || '';
 const GUIDELINES_API_KEY = process.env.GUIDELINES_API_KEY || '';
