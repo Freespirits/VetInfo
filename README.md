@@ -6,6 +6,8 @@ guideline API and falls back to local sample data. The bundled frontend lets you
 ## Running locally
 
 1. Install Node.js 18+.
+   - The server validates the runtime version on startup and exits with a clear message if Node.js 18+ is not available.
+   - A `.nvmrc` file pins the expected version for `nvm` users.
 2. (Optional) export an upstream guideline service:
 
    ```bash
