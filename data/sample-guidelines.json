@@ -1,0 +1,75 @@
+[
+  {
+    "id": "emergency-anaphylaxis-dog",
+    "species": "dog",
+    "topic": "anaphylaxis",
+    "title": "Canine Anaphylaxis Rapid Response",
+    "summary": "Immediate ABC stabilization, epinephrine dosing, antihistamines, and shock fluid boluses.",
+    "actions": [
+      "Assess airway/breathing; provide oxygen and prepare for intubation if stridor or swelling progresses.",
+      "Epinephrine 0.01 mg/kg IM or IV for collapse; repeat every 3-5 minutes as needed.",
+      "Give isotonic crystalloids 20 mL/kg IV bolus; reassess perfusion and repeat up to 3 times for shock.",
+      "Diphenhydramine 1 mg/kg IM; add H2 blocker and corticosteroid for refractory signs.",
+      "Monitor ECG, blood pressure, SpO2, and temperature; be prepared for biphasic reactions."
+    ],
+    "source": "sample-data"
+  },
+  {
+    "id": "emergency-heatstroke-cat",
+    "species": "cat",
+    "topic": "heatstroke",
+    "title": "Feline Heatstroke Stabilization",
+    "summary": "Rapid cooling, fluid resuscitation, and coagulopathy monitoring for heat stress cases.",
+    "actions": [
+      "Stop external heat, move to shaded/air-conditioned area, and start fan-assisted evaporative cooling.",
+      "Cool IV crystalloids 10-20 mL/kg over 15-30 minutes if hypoperfused; avoid overcooling (<39°C).",
+      "Check glucose, electrolytes, and lactate; treat hypoglycemia promptly and monitor for rhabdomyolysis.",
+      "Avoid antipyretics (ineffective); use active cooling and recheck rectal temperature every 5 minutes.",
+      "Assess for DIC with coagulation panel; consider plasma if bleeding or prolonged clotting times."
+    ],
+    "source": "sample-data"
+  },
+  {
+    "id": "fluid-therapy-maintenance-dog",
+    "species": "dog",
+    "topic": "fluid therapy",
+    "title": "Dog Maintenance Fluid Calculator",
+    "summary": "Compute maintenance and deficit replacement with pump or drip sets.",
+    "actions": [
+      "Baseline maintenance: 60 mL/kg/day; adjust for fever (add 10% per °C above normal) and polyuria.",
+      "Deficit: weight (kg) × % dehydration × 1000 = mL to replace over 12-24 hours.",
+      "If using drip set: macro 15 gtt/mL, micro 60 gtt/mL; compute drops/min from mL/hr × gtt factor / 60.",
+      "Avoid hypotonic fluids if sodium <135 mmol/L; monitor electrolytes every 6-12 hours in hospitalized patients.",
+      "Link plan to ongoing losses (vomiting/diarrhea) and reassess perfusion every 2 hours during correction."
+    ],
+    "source": "sample-data"
+  },
+  {
+    "id": "pain-control-nsaid-cat",
+    "species": "cat",
+    "topic": "pain management",
+    "title": "Feline Pain Control with NSAIDs",
+    "summary": "Safe NSAID selection and monitoring checkpoints for cats.",
+    "actions": [
+      "Use lowest effective dose; avoid concurrent corticosteroids or other NSAIDs to reduce GI and renal risk.",
+      "Screen for dehydration, CKD, and hepatic disease; postpone NSAID use if unstable perfusion.",
+      "Provide gastroprotectants when risk factors for ulceration are present; recheck creatinine within 3-5 days.",
+      "Educate clients on accurate dosing, avoiding OTC human NSAIDs, and watching for anorexia/vomiting."
+    ],
+    "source": "sample-data"
+  },
+  {
+    "id": "lab-reference-canine-cbc",
+    "species": "dog",
+    "topic": "lab reference",
+    "title": "Canine CBC Quick Reference",
+    "summary": "Common canine CBC intervals with critical value reminders.",
+    "actions": [
+      "PCV 37-55%; critical <20% or >60% depending on clinical context.",
+      "Platelets 200-500k/µL; investigate <50k/µL urgently for risk of bleeding.",
+      "WBC 6-17 ×10^3/µL; watch for toxic change or left shift signaling sepsis.",
+      "Pair CBC trends with hydration assessment; hemoconcentration can mask anemia in dehydrated patients."
+    ],
+    "source": "sample-data"
+  }
+]

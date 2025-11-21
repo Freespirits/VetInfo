@@ -1,0 +1,15 @@
+{
+  "name": "vetinfo",
+  "version": "1.0.0",
+  "description": "Veterinary guideline viewer with API proxy and lightweight frontend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "test": "echo \"No automated tests configured\" && exit 0"
+  },
+  "keywords": ["veterinary", "guidelines", "frontend", "api"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
