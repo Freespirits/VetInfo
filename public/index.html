@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vet Guidance Browser</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Veterinary quick reference</p>
+        <h1>Search vetted guidelines and emergency playbooks</h1>
+        <p class="lede">
+          Use the built-in sample data or connect an external guideline API to keep teams aligned on safe dosing,
+          fluid therapy, and emergency care.
+        </p>
+        <div class="status" id="status">Checking backend…</div>
+      </div>
+      <div class="hero__panel">
+        <form id="search-form" class="search-form">
+          <label>
+            Species
+            <select name="species" id="species">
+              <option value="">Any</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+            </select>
+          </label>
+          <label>
+            Topic
+            <select name="topic" id="topic">
+              <option value="">Any</option>
+              <option value="anaphylaxis">Anaphylaxis</option>
+              <option value="heatstroke">Heatstroke</option>
+              <option value="fluid therapy">Fluid therapy</option>
+              <option value="pain management">Pain management</option>
+              <option value="lab reference">Lab reference</option>
+            </select>
+          </label>
+          <label>
+            Keyword search
+            <input type="text" name="search" id="search" placeholder="e.g., epinephrine, bolus" />
+          </label>
+          <button type="submit">Find guidance</button>
+          <p class="helper">If an upstream API is configured, live results will replace sample data automatically.</p>
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="section-header">
+          <h2>Guidance results</h2>
+          <div class="pill" id="result-source">Loading…</div>
+        </div>
+        <div id="results" class="card-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Configure <code>GUIDELINES_API_BASE</code> (and optional <code>GUIDELINES_API_KEY</code>) in the environment to connect to
+        your own vetted database.
+      </p>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
