@@ -8,11 +8,12 @@ guideline API and falls back to local sample data. The bundled frontend lets you
 1. Install Node.js 18+.
    - The server validates the runtime version on startup and exits with a clear message if Node.js 18+ is not available.
    - A `.nvmrc` file pins the expected version for `nvm` users.
-2. (Optional) export an upstream guideline service:
+2. (Optional) export an upstream guideline service. If these variables are not set, the server automatically falls back to the
+   bundled sample dataset:
 
    ```bash
-   export GUIDELINES_API_BASE="https://your-guideline-api.example.com"
-   export GUIDELINES_API_KEY="token-if-required"
+   export GUIDELINES_API_BASE="https://your-guideline-api.example.com" # required for live data
+   export GUIDELINES_API_KEY="token-if-required"                         # optional bearer token
    ```
 
 3. Start the server:
@@ -43,3 +44,5 @@ The static frontend (served from `public/`) provides:
   middleware, add them to `package.json` and `npm install` in an environment with registry access.
 - Replace `data/sample-guidelines.json` with your production data model or extend the backend fetcher to match your upstream API
   schema.
+- The backend reads `GUIDELINES_API_BASE` and `GUIDELINES_API_KEY` from the environment. Without `GUIDELINES_API_BASE`, all
+  requests are served from the sample dataset.
